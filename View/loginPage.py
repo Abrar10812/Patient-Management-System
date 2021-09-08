@@ -1,3 +1,5 @@
+from MVCStructure.Controller import *
+
 import tkinter as tk
 root = tk.Tk()
 HEIGHT = 500
@@ -12,7 +14,7 @@ frame = tk.Frame(root, bg = '#F8F8FF',  highlightcolor="black", highlightthickne
 frame.place(relx= 0.5, rely=0.5, relwidth= 0.4, relheight= 0.95, anchor= 'center')
 
 #label
-label = tk.Label(frame, text="Patient management System", font= 0.1)
+label = tk.Label(frame, text="Patient Management System", font= 0.1)
 label.place(relx=0.5, rely=0.1, anchor ='n')
 
 #emailLabel
@@ -29,6 +31,7 @@ value_inside = tk.StringVar(root)
 value_inside.set("Select an Option")
 selectCat = tk.OptionMenu(root, value_inside, *option_list)
 selectCat.place(relx=0.5, rely=0.23, anchor ='n')
+
 
 
 #entryEmail/input email
