@@ -1,14 +1,36 @@
-from MVCStructure.Model import *
-from MVCStructure.View import *
+import sys
 
-class controller:
-    def __init__(self):
-        pass
+import Model.doctorDb
 
-    def main(self):
-        print("Hello")
+sys.path.append('D:\Summer21\CSE470\Project\MVCStructure')
 
-if __name__ == '__main__':
-    pms= controller()
-    pms.main()
+def signUpClicked():
+    import View.signUppage
+    #execfile('signUppage.py')
+
+
+def signUpbuttonClicked(entryName, entryPhone, bloodGroup, entryEmail, entryPass):
+    name = str(entryName)
+    phone = str(entryPhone)
+    email = str(entryEmail)
+    password = str(entryPass)
+
+    import Model.patientDb
+    pDb = Model.patientDb.patientDb()
+    pDb.newUserSignUp(name, phone, bloodGroup, email, password)
+
+def logIn(email, password):
+    import Model.patientDb
+    testIfEqual= Model.patientDb.checkLogInInfo(email, password)
+
+def fetchDoctorlist():
+    docListFromModel = Model.doctorDb.doctorList()
+    return docListFromModel
+
+def doctorNames():
+    pass
+
+
+
+
 
