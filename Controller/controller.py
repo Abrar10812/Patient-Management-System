@@ -27,8 +27,10 @@ def fetchDoctorlist():
     docListFromModel = Model.doctorDb.doctorList()
     return docListFromModel
 
-def doctorNames():
-    pass
+def doctorInfowithQual():
+    import Model.doctorDb
+    x = Model.doctorDb.showDoctorInfo()
+    return x
 
 
 

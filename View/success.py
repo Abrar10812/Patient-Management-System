@@ -8,9 +8,9 @@ root.iconbitmap(r'D:\Summer21\CSE470\Project\MVCStructure\View\favicon.ico')
 HEIGHT = 500
 WIDTH = 800
 
-def clickAddAppointment():
-    root.destroy()
-    import View.addAppointmentClicked
+def bTH():
+   root.destroy()
+   import View.patientHomePage
 
 #canvas/ container
 canvas = tk.Canvas(root, height = HEIGHT, width = WIDTH)
@@ -20,14 +20,13 @@ canvas.pack()
 frame = tk.Frame(root, bg = '#A7B3FD',  highlightcolor="black", highlightthickness=2, bd=2)
 frame.place(relx= 0.5, rely=0.5, relwidth= 0.4, relheight= 0.95, anchor= 'center')
 
-#Welcome
-welcome = tk.Label(frame,bg = '#D7B9DF', text="Welcome", font= 5)
-welcome.place(relx=0.5, rely=0.1, anchor='n')
+#Appointment Successfully Added Label
+appointmentSuccessfullyAdded = tk.Label(frame, bg ='green', text="Appointment Successfully Added!", font= 5)
+appointmentSuccessfullyAdded.place(relx=0.5, rely=0.2,relheight= 0.2,relwidth= 0.9, anchor='n')
 
-#Add appointment button
-addappbt = tk.Button(frame, text="Add appointment", bg='#001EB9', fg='white', font= 3, command= clickAddAppointment)
-addappbt.place(relx=0.5, rely=0.3, relwidth=0.9, anchor= 'center')
-
+#back to home button
+backToHome= tk.Button(frame, text="Back To Home", bg='blue', fg='white', font= 3, command = bTH)
+backToHome.place(relx=0.5, rely=0.6, relwidth=0.9, anchor= 'center')
 
 #log out button
 logoutbt = tk.Button(frame, text="Log out", bg='red', fg='white', font= 3, command = root.destroy)

@@ -9,6 +9,14 @@ import Controller.controller
 HEIGHT = 500
 WIDTH = 800
 
+def goToUpcomingAppointments():
+    root.destroy()
+    import View.success
+
+def doctorInfoButton():
+    root.destroy()
+    import View.doctorInfo
+
 def back():
     root.destroy()
     import View.patientHomePage
@@ -29,8 +37,8 @@ frame.place(relx= 0.5, rely=0.5, relwidth= 0.4, relheight= 0.95, anchor= 'center
 addAppointment = tk.Label(frame, bg ='#D7B9DF', text="Add Appointment", font= 5)
 addAppointment.place(relx=0.5, rely=0.1, anchor='n')
 
-#Add appointment button
-doctorInfo = tk.Button(frame, text="Doctor Info", bg='green', fg='white', font= 3)
+#Doctor Info button
+doctorInfo = tk.Button(frame, text="Doctor Info", bg='green', fg='white', font= 3, command= doctorInfoButton)
 doctorInfo.place(relx=0.5, rely=0.3, relwidth=0.9, anchor= 'center')
 
 #Doctor option menu
@@ -49,10 +57,11 @@ selectTimeLabel.place(relx=0.3, rely=0.5, anchor='n')
 #entrySelectTime
 selectTime = tk.Entry(frame)
 selectTime.place(relx=0.5, rely=0.55, relheight=0.05, relwidth=0.9, anchor='n')
+sT = selectTime.get()
 
-#Add appointment button
-addappbt = tk.Button(frame, text="Add appointment", bg='#001EB9', fg='white', font= 3)
-addappbt.place(relx=0.5, rely=0.8, relwidth=0.9, anchor= 'center')
+#Confirm appointment button
+confirmAppointment = tk.Button(frame, text="Confirm appointment", bg='#001EB9', fg='white', font=3, command = goToUpcomingAppointments)
+confirmAppointment.place(relx=0.5, rely=0.8, relwidth=0.9, anchor='center')
 
 #back button
 backbt = tk.Button(frame, text="back", bg='red', fg='white', font= 3, command =back)
